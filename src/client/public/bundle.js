@@ -82,12 +82,14 @@
 	  _createClass(Square, [{
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      return _react2.default.createElement(
 	        'button',
 	        { className: 'square', onClick: function onClick() {
-	            return alert('clickity clack');
+	            return _this2.setState({ value: 'X' });
 	          } },
-	        this.props.value
+	        this.state.value
 	      );
 	    }
 	  }]);
