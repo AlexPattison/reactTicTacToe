@@ -84,7 +84,8 @@
 	    var _this = _possibleConstructorReturn(this, (Board.__proto__ || Object.getPrototypeOf(Board)).call(this, props));
 	
 	    _this.state = {
-	      squares: Array(9).fill(null)
+	      squares: Array(9).fill(null),
+	      xIsNext: true
 	    };
 	    return _this;
 	  }
@@ -93,8 +94,11 @@
 	    key: 'handleClick',
 	    value: function handleClick(i) {
 	      var squares = this.state.squares.slice();
-	      squares[i] = 'X';
-	      this.setState({ squares: squares });
+	      squares[i] = this.state.xIsNext ? 'X' : 'O';
+	      this.setState({
+	        squares: squares,
+	        xIsNext: !this.state.xIsNext
+	      });
 	    }
 	  }, {
 	    key: 'renderSquare',
@@ -179,6 +183,11 @@
 	}(_react2.default.Component);
 	
 	(0, _reactDom.render)(_react2.default.createElement(Game, null), document.getElementById('container'));
+	
+	function calculateWinner(squares) {
+	  var lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+	  for (var i = 0; i < lines.length; i++) {}
+	}
 
 /***/ },
 /* 1 */
