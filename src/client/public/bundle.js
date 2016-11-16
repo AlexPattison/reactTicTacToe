@@ -68,10 +68,15 @@
 	var Square = function (_React$Component) {
 	  _inherits(Square, _React$Component);
 	
-	  function Square() {
+	  function Square(props) {
 	    _classCallCheck(this, Square);
 	
-	    return _possibleConstructorReturn(this, (Square.__proto__ || Object.getPrototypeOf(Square)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Square.__proto__ || Object.getPrototypeOf(Square)).call(this, props));
+	
+	    _this.state = {
+	      value: null
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(Square, [{
