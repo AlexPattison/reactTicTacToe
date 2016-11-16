@@ -79,7 +79,9 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'button',
-	        { className: 'square' },
+	        { className: 'square', onClick: function onClick() {
+	            return alert('clickity clack');
+	          } },
 	        this.props.value
 	      );
 	    }

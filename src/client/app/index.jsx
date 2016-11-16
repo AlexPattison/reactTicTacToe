@@ -4,7 +4,7 @@ import {render} from 'react-dom';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
+      <button className="square" onClick={() => alert('clickity clack')}>
         {this.props.value}
       </button>
     )
